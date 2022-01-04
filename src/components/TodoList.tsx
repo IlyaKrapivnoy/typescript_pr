@@ -12,6 +12,10 @@ export const TodoList: React.FC<TodoListProps> = ({
     onToggle,
     onRemove,
 }) => {
+    if (!todos.length) {
+        return <p className='center'>Пока дел нет</p>;
+    }
+
     return (
         <ul>
             {todos.map((todo) => {
