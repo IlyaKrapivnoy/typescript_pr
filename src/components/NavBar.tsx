@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 export const NavBar: React.FC = () => (
     <nav>
@@ -8,10 +9,10 @@ export const NavBar: React.FC = () => (
             </a>
             <ul id='nav-mobile' className='right hide-on-small-only'>
                 <li>
-                    <a href='sass.html'>Список дел</a>
+                    <NavLink to='/'>Список дел</NavLink>
                 </li>
                 <li>
-                    <a href='badges.html'>Информация</a>
+                    <NavLink to='/about'>Информация</NavLink>
                 </li>
             </ul>
         </div>
