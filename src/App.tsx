@@ -15,6 +15,10 @@ const App: React.FC = () => {
         setTodos(saved);
     }, []);
 
+    useEffect(() => {
+        localStorage.setItem('todos', JSON.stringify(todos));
+    }, [todos]);
+
     const addHandler = (title: string) => {
         const newTodo: ITodo = {
             title: title,
