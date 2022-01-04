@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navbar } from './components/NavBar';
 import { TodoList } from './components/TodoList';
 import { ITodo } from './interfaces';
@@ -6,6 +6,14 @@ import { TodoForm } from './TodoForm';
 
 const App: React.FC = () => {
     const [todos, setTodos] = useState<ITodo[]>([]);
+
+    useEffect(() => {
+        const saved = JSON.parse(
+            localStorage.getItem('todos') || '[]'
+        ) as ITodo[];
+
+        setTodos(saved);
+    }, []);
 
     const addHandler = (title: string) => {
         const newTodo: ITodo = {
@@ -31,12 +39,12 @@ const App: React.FC = () => {
     };
 
     const removeHandler = (id: number) => {
-      const shouldRemove = window.confirm(
-          'Вы уверены, что хотите удалить элемент?'
-      );
-      if (shouldRemove) {
-          setTodos((prev) => prev.filter((todo) => todo.id !== id));
-      }
+        const shouldRemove = window.confirm(
+            'Вы уверены, что хотите удалить элемент?'
+        );
+        if (shouldRemove) {
+            setTodos((prev) => prev.filter((todo) => todo.id !== id));
+        }
     };
 
     return (
