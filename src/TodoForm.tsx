@@ -4,7 +4,7 @@ interface TodoFormProps {
     onAdd(title: string): void;
 }
 
-export const TodoForm: React.FC<TodoFormProps> = () => {
+export const TodoForm: React.FC<TodoFormProps> = (props) => {
     // const [title, setTitle] = useState<string>('');
     const ref = useRef<HTMLInputElement>(null);
 
@@ -14,7 +14,7 @@ export const TodoForm: React.FC<TodoFormProps> = () => {
 
     const keyPressHandler = (event: React.KeyboardEvent) => {
         if (event.key === 'Enter') {
-            console.log(ref.current!.value);
+            props.onAdd(ref.current!.value);
             ref.current!.value = '';
             // console.log({ title });
             // setTitle('');
