@@ -1,12 +1,12 @@
 import React from 'react';
 
-export const Navbar: React.FC = () => (
+export const NavBar: React.FC = () => (
     <nav>
         <div className='nav-wrapper teal px1'>
             <a href='/' className='brand-logo'>
                 React + TS
             </a>
-            <ul id='nav-mobile' className='right hide-on-med-and-down'>
+            <ul id='nav-mobile' className='right hide-on-small-only'>
                 <li>
                     <a href='sass.html'>Список дел</a>
                 </li>

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Navbar } from './components/NavBar';
+import { NavBar } from './components/NavBar';
 
 const App: React.FC = () => {
     return (
         <>
-            <Navbar />
+            <NavBar />
             <div className='container'></div>
         </>
     );
