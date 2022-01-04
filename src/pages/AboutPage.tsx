@@ -1,6 +1,8 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 export const AboutPage: React.FC = () => {
+    const history = useHistory();
     return (
         <>
             <h1>Страница Информации</h1>
@@ -9,7 +11,9 @@ export const AboutPage: React.FC = () => {
                 officia blanditiis nam totam ipsum ex odit sequi dolorem
                 corrupti.
             </p>
-            <button className='btn'>К списку дел</button>
+            <button className='btn' onClick={() => history.push('/')}>
+                К списку дел
+            </button>
         </>
     );
 };
